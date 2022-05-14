@@ -4,84 +4,58 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   //variable for password length
-  var passLength = prompt("How many characters should your password be?", "Please choose between 8 and 128 characters.");
+  let passLength = prompt("How many characters should your password be?", "Please choose between 8 and 128 characters.");
     if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
       alert("Please choose a length between 8 and 128 characters.");
       generatePassword();
     }
 
-    
-  //function for lowercase
-  function lowercase() {
-    //variable for lowercase
-    var passLower = confirm("Would you like to include lowercase letters?");
-    // if passlower is true, include lowercase letters. If false, do not include
-    if (passLower) {
-      var passLowerResult = prompt("How many lowercase letters would you like?");
-      if (passLowerResult < 8 || passLowerResult > 128 || isNaN(passLowerResult)) {
-        alert("Please choose a value between 8 and 128.");
-        lowercase();
-      }
-    }
+  //variables for each case
+  let passLower = confirm("Would you like to include lowercase letters?");
+
+  let passUpper = confirm("Would you like to include uppercase letters?");
+
+  let passNumbers = confirm("Would you like to include numbers in your password?");
+
+  let passSpecial = confirm("Would you like to include special characters in your password?");
+
+
+  //create strings
+  let lowercase = "abcdefghijklmnopqrstuvwxyz";
+
+  let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWYXYZ";
+
+  let numbers = "0123456789";
+
+  let special = "`~!@#$%^&*()-_=+{[}]\\;:',<.>/";
+
+
+  //declared password
+  let password = "";
+
+
+  //booleans to add true confirms to the password
+  if (passLower) {
+    password = password += lowercase;
   }
 
-  lowercase();
-
-  //make functions for each prompt thing
-
-  function uppercase() {
-    var passUpper = confirm("Would you like to include uppercase letters?");
-    if (passUpper) {
-      var passUpperResult = prompt("How many uppercase letters would you like?");
-      if (passUpperResult < 8 || passUpperResult > 128 || isNaN(passUpperResult)) {
-        alert("Please choose a value between 8 and 128.");
-        uppercase();
-      }
-    }
+  if (passUpper) {
+    password = password += uppercase;
   }
 
-  uppercase();
-
-  function numbers() {
-    var passNumbers = confirm("Would you like to include numbers in your password?");
-    if (passNumbers) {
-      var passNumbersResult = prompt("How many numbers would you like to include?");
-      if (passNumbersResult < 8 || passNumbersResult > 128 || isNaN(passNumbersResult)) {
-        alert("Please choose a value between 8 and 128.");
-        numbers();
-      }
-    }
+  if (passNumbers) {
+    password = password += numbers;
   }
 
-  numbers();
-
-  function special() {
-    var passSpecial = confirm("Would you like to include special characters in your password?");
-    if (passSpecial) {
-      var passSpecialResult = prompt("How many special characters would you like?");
-      if (passSpecialResult < 8 || passSpecialResult > 128 || isNaN(passSpecialResult)) {
-        alert("Please choose a value between 8 and 128.");
-        special();
-      }
-    }
+  if (passSpecial) {
+    password = password += special;
   }
 
-  special();
-  
-  //variable for uppercase
-  var passUpper = confirm("Would you like to include uppercase letters?");
-  //variable for numbers
-  var passNumbers = confirm("Would you like to include numbers?");
-  //variable for special characters
-  var passSpecial = confirm("Would you like to include special characters?");
-  
+
+  //double checking it works lol
+  console.log(password);  
+
 }
-
-
-
-//pulling results 
-
-
 
 
 //function for random character generator
