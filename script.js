@@ -8,6 +8,7 @@ function generatePassword() {
     if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
       alert("Please choose a length between 8 and 128 characters.");
       generatePassword();
+      return;
     }
 
   //variables for each case
@@ -36,75 +37,37 @@ function generatePassword() {
 
   //booleans to add true confirms to the password
   if (passLower) {
-    password = password += lowercase;
+    password += lowercase;
   }
 
   if (passUpper) {
-    password = password += uppercase;
+    password += uppercase;
   }
 
   if (passNumbers) {
-    password = password += numbers;
+    password += numbers;
   }
 
   if (passSpecial) {
-    password = password += special;
+    password += special;
   }
 
-
-  //double checking it works lol
-  console.log(password);  
+  let randomizedPass = randomizedPassword(passLength, password);
+  console.log(randomizedPass);
+  
+  let passwordBox = document.getElementById("password");
+  passwordBox.value = randomizedPass;
 
 }
-
 
 //function for random character generator
-// use this function for each result (number)
-function makeid(passLength) {
-  var result           = '';
-  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  var charactersLength = characters.length;
-  for ( var i = 0; i < length; i++ ) {
-    result += characters.charAt(Math.floor(Math.random() * 
-charactersLength));
- }
- return result;
+function randomizedPassword(passwordLength, password) {
+  let result = '';
+  for ( var i = 0; i < passwordLength; i++ ) {
+    result += password.charAt(Math.floor(Math.random() * 
+    password.length));
+  }
+  return result;
 }
 
-console.log(makeid(5));
-
-
-
-
-//concat them all
-
-
-
-//return the password 
-
-
-
-
-
-
-
-
 generateBtn.addEventListener("click", generatePassword);
-
-
-
-
-//Write password to the #password input
-//function writePassword() {
-   
-  
-//var password = generatePassword();
-//var passwordText = document.querySelector("#password");
-
-//passwordText.value = password;
-
-
-// Add event listener to generate button
-//generateBtn.addEventListener("click", writePassword);
-
-//if (promptLength < 8 || promptLength > 128 || isNaN(promptLength)) 
