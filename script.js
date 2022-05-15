@@ -7,7 +7,9 @@ function generatePassword() {
   let passLength = prompt("How many characters should your password be?", "Please choose between 8 and 128 characters.");
     if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
       alert("Please choose a length between 8 and 128 characters.");
+      //restart the function if the input value is outside the accepted parameters
       generatePassword();
+      //so you get kicked out of the loop
       return;
     }
 
@@ -55,12 +57,13 @@ function generatePassword() {
   let randomizedPass = randomizedPassword(passLength, password);
   console.log(randomizedPass);
   
+  //puts the randomized password in the password textbox on the screen
   let passwordBox = document.getElementById("password");
   passwordBox.value = randomizedPass;
-
 }
 
 //function for random character generator
+//generates a random number, rounds it down to nearest integer, selects the character at that position in the string
 function randomizedPassword(passwordLength, password) {
   let result = '';
   for ( var i = 0; i < passwordLength; i++ ) {

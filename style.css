@@ -12,9 +12,17 @@ body,
   padding: 0;
 }
 
+h1 {
+  /* Gave the header a slightly opaque background so it'd be more visible against the background image */
+  background-color: white;
+  opacity: 95%;
+}
+
 body {
-  font-family: sans-serif;
-  background-color: #f9fbfd;
+  /* Changed the font and background image */
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('/images/background.jpg');
+  background-size: cover;
 }
 
 .wrapper {
@@ -27,7 +35,9 @@ header {
   text-align: center;
   padding: 20px;
   padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+  color: hotpink;
+  text-decoration: underline;
+  font-size: x-large;
 }
 
 .card {
@@ -40,6 +50,7 @@ header {
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
+  opacity: 95%;
 }
 
 .card-header::after {
@@ -74,7 +85,8 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  /* Changed button background color to pink */
+  background-color: hotpink;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
@@ -112,7 +124,8 @@ button[disabled] {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
+  /* Gave the password box border a thicker blue dotted line instead for fun */
+  border: 5px dotted #248cc9;
   border-radius: 6px;
   resize: none;
   overflow: hidden;
