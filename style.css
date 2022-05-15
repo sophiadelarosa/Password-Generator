@@ -21,7 +21,7 @@ h1 {
 body {
   /* Changed the font and background image */
   font-family: 'Open Sans', sans-serif;
-  background-image: url('/images/background.jpg');
+  background-image: url('./images/background.jpg');
   background-size: cover;
 }
 

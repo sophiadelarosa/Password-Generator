@@ -1,7 +1,6 @@
 // Variables
 var generateBtn = document.querySelector("#generate");
 
-
 function generatePassword() {
   //variable for password length
   let passLength = prompt("How many characters should your password be?", "Please choose between 8 and 128 characters.");
