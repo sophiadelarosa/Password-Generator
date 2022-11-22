@@ -1,4 +1,4 @@
-# 03 JavaScript: Password Generator Challenge
+# JavaScript: Password Generator Challenge
 
 ## by Sophia De La Rosa
 
